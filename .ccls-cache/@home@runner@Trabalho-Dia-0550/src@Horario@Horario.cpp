@@ -4,9 +4,13 @@
     hora = h;
   }
   void Horario::set_minuto(int m){
-		minuto = m
+		minuto = m;
   }
 
-	in
+	int Horario::get_minuto(){
+		return  minuto;
+	}
 
-  int Horario::get
+  int Horario::get_hora(){
+    return hora;
+  }
