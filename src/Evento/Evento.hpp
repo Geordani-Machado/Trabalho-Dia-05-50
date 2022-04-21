@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-  class Evento {
+  class Evento{
     public:
-      //SETs
+			void set_qtdEventos();
 			void set_produtor(string produtor);
       void set_nomeEvento(string nomeEvento);
 			void set_dia(int dia);
@@ -14,7 +14,6 @@ using namespace std;
 			void set_local(string local);
 			void set_qtdIngresso(int qtdIngresso);
 			void set_vliIngresso(float vlIngresso);
-      //GETs
       int get_hora();
       int get_minuto();
       string get_local();
@@ -25,7 +24,8 @@ using namespace std;
       int get_dia();
       int get_mes();
       int get_ano();
-	    string get_nomeEvento();
+      int get_qtdEventos();
+	    
     
       private:
   			string nomeEvento;
@@ -38,7 +38,6 @@ using namespace std;
 				int minuto;
 				int qtdIngresso;
 				int vlIngresso;
+				int qtdEventos;
 				
-		
-
   };

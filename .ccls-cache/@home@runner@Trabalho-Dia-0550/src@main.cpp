@@ -37,7 +37,7 @@ void CriarPerfil(){
 	pessoa.set_senha(senha);
 	cout << "------------- Sucesso ! ------------ \n";
 	cout << "Perfil criado com sucesso! :) \n";
-	cout << "------------------------------------ \n";
+	cout << "------------------------------------ \n \n";
 	controlemenu = 0;
 }
 
@@ -46,7 +46,12 @@ void CriarEvento () {
 }
 
 void ListarEvento () {
-  evento.get
+	if(evento.get_qtdEventos() == 0){
+		cout << "------------- Alerta ! ------------ \n";
+		cout << "Nenhum Evento foi encontrado! :( \n";
+		cout << "------------------------------------ \n \n";
+	}
+  evento.get_nomeEvento();
 }
 
 void ComprarIngresso () {
@@ -67,7 +72,7 @@ void Menu(){
 	cout << "2 - Criar evento\n";
 	cout << "3 - Listar Eventos | Comprar ingressos \n";
 	cout << "4 - Pedir Reembolso \n";
-	cout << "---------------------------------------------\n";
+	cout << "---------------------------------------------\n \n";
 	cin >> op;
 
 		switch(op)
