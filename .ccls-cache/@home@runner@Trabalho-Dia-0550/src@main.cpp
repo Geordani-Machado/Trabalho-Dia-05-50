@@ -1,7 +1,8 @@
+
 #include <iostream>
 using namespace std;
 
-//        includes
+// includes
 #include "./Pessoa/Pessoa.hpp"
 #include "./Data/Data.hpp"
 #include "./Local/Local.hpp"
@@ -43,7 +44,101 @@ void CriarPerfil(){
 
 void CriarEvento () {
 
+	string nomeevento;
+	string url, localEvento;
+	string rua;
+  string bairro;
+	int numero;
+  string cidade;
+  string estado;
+  string pais;
+	
   cout << "------------- Criar Evento ------------ \n";
+	cout << "Qual o nome do Evento? \n";
+	cout << "Digite o nome do Evento: ";
+	cin >> nomeevento;
+	evento.set_nomeEvento(nomeevento);
+	int opcao;
+
+	do{
+		cout << "O Evento é Presencial ou Online ? \n";
+		cout << "1 - Presencial | 2 Online \n";
+		cin >> opcao;
+
+
+		switch (opcao){
+			
+			
+      case 1://presencial
+				
+  			
+          cout << "Qual o endereço do evento? \n";
+        	cout << "Digite a rua: ";
+          cin >> rua;
+  				local.set_rua(rua);
+          cout << "Digite o bairro: ";
+          cin >> bairro;
+  				local.set_bairro(bairro);
+          cout << "Digite a cidade: ";
+          cin >> cidade;
+  				local.set_cidade(cidade);
+          cout << "Digite o numero do endereço: ";
+          cin >> numero;
+  				local.set_numero(numero);
+          cout << "Digite o estado onde vai ocorrer o evento: ";
+          cin >> estado;
+  				local.set_estado(estado);
+
+					cout << "O Evento é Internacional ? ";
+					cout << "1 - Sim | 2 - Não ";
+					int soun;
+
+					switch(soun)
+						{
+							case 1:
+								cout << "Digite em qual pais o evento vai ocorrer: ";
+          			cin >> pais;
+  							local.set_pais(pais);
+							break;
+							case 2:
+								local.set_pais("Brasil");
+							break;
+							default:
+							cout << " --------------- Erro ------------ \n";
+							cout << " Digite uma Opção valida! \n";
+							cout << " ---------------------------------- \n";
+						}
+
+			break;
+			
+			case 2://Online
+				
+				cout << "Qual o link para acessar o evento: \n";
+				cout << "Digite a URl: \n";
+				cin >> url;
+				local.set_url(url);
+				localEvento = url;
+				evento.set_local(localEvento);
+
+				cout << " --------------- Sucesso! ------------ \n";
+				cout << " O Evento foi criado com Exito ;) \n";
+				cout << " ---------------------------------- \n \n";
+				
+				
+			break;
+			
+			default:
+			cout << " --------------- Erro ------------ \n";
+			cout << " Digite uma Opção valida! \n";
+			cout << " ---------------------------------- \n";
+			
+		}
+		
+	}while(opcao < 1 || opcao >2);
+
+	
+
+
 }
 
 void ListarEvento () {
