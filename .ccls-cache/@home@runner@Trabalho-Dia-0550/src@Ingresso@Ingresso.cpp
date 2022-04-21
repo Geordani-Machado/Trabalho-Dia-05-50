@@ -8,7 +8,10 @@
 		evento = e;
 	}
 
+	string Ingresso::get_evento(){
+		return evento;
+	}
 
-s
-
-  string Ingresso::get
+  string Ingresso::get_proprietario(){
+    return proprietario;
+  }

@@ -10,7 +10,7 @@ using namespace std;
 #include "./Dinheiro/Dinheiro.hpp"
 #include "./Horario/Horario.hpp"
 
-// cria a invocação prara chamar a classe
+// cria a invocação para chamar a classe
 Pessoa pessoa;
 Data data;
 Local local;
@@ -42,10 +42,13 @@ void CriarPerfil(){
 }
 
 void CriarEvento () {
-  
+
+  cout << "------------- Criar Evento ------------ \n";
 }
 
 void ListarEvento () {
+
+    cout << "------------- Listar Eventos ------------ \n";
 	if(evento.get_qtdEventos() == 0){
 		cout << "------------- Alerta ! ------------ \n";
 		cout << "Nenhum Evento foi encontrado! :( \n";
@@ -55,11 +58,46 @@ void ListarEvento () {
 }
 
 void ComprarIngresso () {
+    
+    cout << "------------- Comprar Ingresso ------------ \n";
+	if(evento.get_qtdEventos() == 0){
+		cout << "------------- Alerta ! ------------ \n";
+		cout << "Nenhum Evento esta vendendo ingresso no momento\n";
+		cout << "------------------------------------ \n \n";
+	}
+
+	string proprietario;
+	proprietario = pessoa.get_nome();
+	ingresso.set_proprietario(proprietario);
+	string eventonome;
+	eventonome = evento.get_nomeEvento();
+	ingresso.set_evento(eventonome);
   
 }
 
 void PedirReembolso() {
-  
+	string nomeevento;
+	bool achou = 0;
+
+	do{
+	cout << "------------- Pedir Reembolso ------------ \n";
+	cout << "Para qual Evento você deseja pedir reembolso?\n";
+	cout << "digite o nome do evento: ";
+	cin >> nomeevento;
+	cout << "------------------------------------ \n \n";
+	
+	
+
+	if(evento.get_nomeEvento() != nomeevento){
+		cout << "------------- Erro! ------------ \n";
+		cout << "Nenhum Evento foi encontrado com esse nome, tente novamente\n";
+		cout << "------------------------------------ \n \n";
+	}else{
+		achou =1;
+	}
+		
+	}while(achou == 0);
+		
 }
 
 
