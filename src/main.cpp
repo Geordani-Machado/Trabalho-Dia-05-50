@@ -1,12 +1,26 @@
 #include <iostream>
-#include "./Pessoa/Pessoa.hpp"
-#include "./Data/Data.hpp"
-
 using namespace std;
 
-int controlemenu = 0;
+//        includes
+#include "./Pessoa/Pessoa.hpp"
+#include "./Data/Data.hpp"
+#include "./Local/Local.hpp"
+#include "./Evento/Evento.hpp"
+#include "./Ingresso/Ingresso.hpp"
+#include "./Dinheiro/Dinheiro.hpp"
+#include "./Horario/Horario.hpp"
 
+// cria a invocação prara chamar a classe
 Pessoa pessoa;
+Data data;
+Local local;
+Evento evento;
+Ingresso ingresso;
+Horario horario;
+Dinheiro dinheiro;
+
+// variavei globais
+int controlemenu = 0;
 
 
 void CriarPerfil(){
@@ -32,9 +46,7 @@ void CriarEvento () {
 }
 
 void ListarEvento () {
-
-	
-  
+  evento.get
 }
 
 void ComprarIngresso () {
