@@ -6,6 +6,6 @@ Amor eu te amo muito <3
 
 
 estou em uma nova verão do meu projeto <br/>
-versão> 2.1
+versão: 2.1
 
 Projeto Licença MIT. 
