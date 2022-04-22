@@ -4,6 +4,7 @@
     hora = h;
   }
   void Horario::set_minuto(int m){
+   
 		minuto = m;
   }
 
