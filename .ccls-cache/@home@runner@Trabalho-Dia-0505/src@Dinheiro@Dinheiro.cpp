@@ -1,13 +1,16 @@
 #include "Dinheiro.hpp"
+#include "../Pessoa/Pessoa.hpp"
 
-  double Dinheiro::set_real(double r){
+Pessoa pesso
+
+  void Dinheiro::set_real(double r){
     real = r;
 }
-  double Dinheiro::set_dolar(double d){
-        dolar = d;
-      }
+  void Dinheiro::set_dolar(double d){
+    dolar = d;
+}
   
-  double Dinheiro::set_euro (double e){
+  void Dinheiro::set_euro(double e){
     euro = e;
   }
       
@@ -22,3 +25,7 @@
   double Dinheiro::get_euro (){
     return euro;
   }
+
+void pagar(string d , string p , double v, int tipopagamento , int tipotransacao){
+	
+}
