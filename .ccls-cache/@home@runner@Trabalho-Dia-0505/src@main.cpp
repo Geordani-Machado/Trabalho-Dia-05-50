@@ -1,5 +1,7 @@
 #include <iostream>
+#include <locale>
 using namespace std;
+
 
 // includes
 #include "./Pessoa/Pessoa.hpp" 
@@ -22,12 +24,21 @@ Dinheiro dinheiro;
 // variaveis globais
 	int controlemenu = 0, dia, mes,ano , hora , minuto , numero;
 	string nomeevento,url, localEvento, rua, bairro, cidade , estado , pais;
+	int controle=1;
+	bool b = 0; 
 
 void Erro(){
 	cout << " --------------- Erro ------------ \n";
 	cout << " Digite uma Opção valida! \n";
 	cout << " ---------------------------------- \n";
 }
+
+void Sucesso(string mensagem){
+	cout << "------------- Sucesso ! ------------ \n";
+	cout << mensagem;
+	cout << "! :) \n";
+	cout << "------------------------------------ \n \n";
+}//void sucesso
 
 void CriarPerfil(){
 	string nome, email, senha;
@@ -45,11 +56,102 @@ void CriarPerfil(){
 	cout << "Perfil criado com sucesso! :) \n";
 	cout << "------------------------------------ \n \n";
 	controlemenu = 0;
-}
+}//Void criarPerfil
 
+
+void Janeiro(){
+	do{
+		cout << "------- Janeiro -----\n";
+  	cout << "Qual a data do evento? \n";
+		cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+		cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
+		cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
+		cout <<"|29| |30| |31| \n";
+		cout << "Digite o dia: ";
+		cin >> dia;
+		cout << "Digite o dia: ";
+		cin >> dia;
+		if(dia >= 1 && dia <= 31){
+			data.set_dia(dia);
+			data.set_mes(1);
+			controle = 0;
+		}else{
+			Erro();
+			controle = 1;
+		}
+	}while(controle == 1);  
+}//void Janeiro
+
+void Fevereiro() {
+	do{
+		cout << "------- Fevereiro-----\n";
+  	cout << "Qual a data do evento? \n";
+    cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10 \n";
+    cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
+		cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
+		if(b==1){
+			cout <<"|29| \n";
+		}
+		cout << "Digite o dia: ";
+		cin >> dia;
+
+		if((dia >= 1 && dia <= 29 && b==1) || (dia >=1 && dia <= 28 && b==0)){
+				data.set_dia(dia);
+				data.set_mes(2);
+				controle =0;
+		}else{
+			Erro();
+			controle =1;
+		}
+	}while(controle == 1);				
+}//void Fevereiro
+
+void Marco(){
+  do {
+    cout << "------- Março -----\n";
+                cout << "Qual a data do evento? \n";
+								cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+								cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
+								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
+								cout <<"|29| |30| |31| \n";
+       					cout << "Digite o dia: ";
+								cin >> dia;
+								if(dia >= 1 && dia <= 31){
+									data.set_dia(dia);
+									data.set_mes(3);
+									controle =0;
+								}else{
+									Erro();
+                  controle = 1;
+                  }
+              }while (controle == 1);
+}//void Março
+
+void Abril(){
+  do {
+  cout << "------- Abril -----\n";
+  cout << "Qual a data do evento? \n";
+	cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+	cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
+	cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
+	cout <<"|29| |30| \n";
+    cout << "Digite o dia: ";
+		cin >> dia;
+			if(dia >= 1 && dia <= 30){
+			data.set_dia(dia);
+			data.set_mes(4);
+			controle=0;
+			}else{
+			Erro();
+        controle=1;
+			}
+    
+  }while (controle == 1);
+}//void Abril
 void CriarData(){
-	int controle=0;
-	bool b = 0; 
+	cout << "Qual ano você deseja criar o evento? \n";
+	cout << "Digite o ano: ";
+          cin >> ano;
 	if(ano % 400 == 0){
         cout << "É bissexto" << endl;
 				b=1;
@@ -60,80 +162,26 @@ void CriarData(){
         cout << "Não é bissexto" << endl;
 				b = 0;
 		}
-	cout << "Qual ano você deseja criar o evento? \n";
-	cout << "Digite o ano: ";
-          cin >> ano;
-  				data.set_ano(ano);
+  	data.set_ano(ano);
 	cout << "------------------------------------\n";
-cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n 5- Maio \n 6- Junho \n 7- Julho \n 8- Agosto \n 9- Setembro \n 10- Outubro \n 11- Novembro \n 12- Dezembro \n";
+	cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n 5- Maio \n 6- Junho";
+	cout << "\n 7- Julho \n 8- Agosto \n 9- Setembro \n 10- Outubro \n 11- Novembro \n 12- Dezembro \n";
           	cin >> mes;
 						switch(mes)
 						{
 							case 1:
-								cout << "------- Janeiro -----\n";
-  							cout << "Qual a data do evento? \n";
-								cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
-								cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
-								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-								cout <<"|29| |30| |31| \n";
-       					cout << "Digite o dia: ";
-								if(dia >= 1 && dia <= 31){
-									data.set_dia(dia);
-									data.set_mes(1);
-									controle=1;
-								}else{
-									Erro();
-								}break;
-						
+									Janeiro();
+								break;
               case 2:
-								cout << "------- Fevereiro-----\n";
-                cout << "Qual a data do evento? \n";
-                cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10 \n";
-                cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
-								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-							if(b==1){
-								cout <<"|29| \n";
-							}
-								
-								if((dia >= 1 && dia <= 29 && b==1) || (dia >=1 && dia <= 28 && b==0)){
-									data.set_dia(dia);
-									data.set_mes(2);
-									controle=2;
-								}else{
-									Erro();
-								}break;
-						
+                  Fevereiro();
+								break;
               case 3:
-								cout << "------- Março -----\n";
-                cout << "Qual a data do evento? \n";
-								cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
-								cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
-								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-								cout <<"|29| |30| |31| \n";
-       					cout << "Digite o dia: ";
-								if(dia >= 1 && dia <= 31){
-									data.set_dia(dia);
-									data.set_mes(3);
-									controle=3;
-								}else{
-									Erro();
-								}break;
+                  Marco();
+								break;
 						
               case 4:
-								cout << "------- Abril -----\n";
-                cout << "Qual a data do evento? \n";
-								cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
-								cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
-								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-								cout <<"|29| |30| \n";
-       					cout << "Digite o dia: ";
-								if(dia >= 1 && dia <= 30){
-									data.set_dia(dia);
-									data.set_mes(4);
-									controle=4;
-								}else{
-									Erro();
-								}break;
+                  Abril();
+								break;
 						
               case 5:
 								cout << "------- Maio -----\n";
@@ -143,6 +191,7 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| |31| \n";
        					cout << "Digite o dia: ";
+								cin >> dia;
 								if(dia >= 1 && dia <= 31){
 									data.set_dia(dia);
 									data.set_mes(5);
@@ -159,6 +208,7 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| \n";
        					cout << "Digite o dia: ";
+								cin >> dia;
 								if(dia >= 1 && dia <= 30){
 									data.set_dia(dia);
 									data.set_mes(6);
@@ -175,6 +225,7 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| |31| \n";
        					cout << "Digite o dia: ";
+                cin >> dia;
 								if(dia >= 1 && dia <= 31){
 									data.set_dia(dia);
 									data.set_mes(7);
@@ -191,13 +242,16 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| |31| \n";
        					cout << "Digite o dia: ";
+								cin >> dia;
 								if(dia >= 1 && dia <= 31){
 									data.set_dia(dia);
 									data.set_mes(8);
 									controle=8;
-								}else{
+								}
+								else{
 									Erro();
-								}break;
+								}
+								break;
 						
               case 9:
 								cout << "------- Setembro -----\n";
@@ -207,6 +261,7 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| \n";
        					cout << "Digite o dia: ";
+								cin >> dia;
 								if(dia >= 1 && dia <= 30){
 									data.set_dia(dia);
 									data.set_mes(9);
@@ -225,6 +280,7 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| |31| \n";
        					cout << "Digite o dia: ";
+								cin >> dia;
 								if(dia >= 1 && dia <= 31){
 									data.set_dia(dia);
 									data.set_mes(10);
@@ -243,6 +299,7 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| \n";
        					cout << "Digite o dia: ";
+								cin >> dia;
 								if(dia >= 1 && dia <= 30){
 									data.set_dia(dia);
 									data.set_mes(11);
@@ -262,36 +319,38 @@ cout << "Qual o mês : \n 1- Janeiro \n 2- Fevereiro \n 3- Março \n 4- Abril \n
 								cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 								cout <<"|29| |30| |31| \n";
        					cout << "Digite o dia: ";
+								cin >> dia;
 								if(dia >= 1 && dia <= 31){
 									data.set_dia(dia);
 									data.set_mes(12);
 									controle=1;
 								}else{
-									cout << "------- Erro -----\n";
-									cout << "Defina um dia valido\n";
-									cout << "------------------------\n";
+									Erro();
 								}break;
 						}
 }
+
+
 void CriarHorario(){ // Criar Horario
-				cout << "------------------------------------\n";
-  				cout << "Qual o horario do evento? \n";
-        	cout << "Digite a hora: ";
-          cin >> hora;
-  				horario.set_hora(hora);
-        cout << "Digite o minuto: ";
-          cin >> minuto;
-          horario.set_minuto(minuto);
-				cout << "------------------------------------\n";
+cout << "------------------------------------\n";
+	cout << "Qual o horario do evento? \n";
+  cout << "Digite a hora: ";
+  cin >> hora;
+  horario.set_hora(hora);
+  cout << "Digite o minuto: ";
+  cin >> minuto;
+  horario.set_minuto(minuto);
+	cout << "------------------------------------\n";
 }
 void CriarEvento () {
+	setlocale (LC_ALL,"portuguese");
   cout << "------------- Criar Evento ------------ \n";
 	cout << "Qual o nome do Evento? \n";
 	cout << "Digite o nome do Evento: ";
 	cin >> nomeevento;
 	evento.set_nomeEvento(nomeevento);
 	cout << "------------------------------------\n";
-			CriarData();
+	data.CriarData();
 	int opcao;
 
 	do{
@@ -369,6 +428,10 @@ void ListarEvento () {
   evento.get_nomeEvento();
 }
 void ComprarIngresso(){ // Comprar Ingresso
+
+
+	//dinheiro.pagar();
+	
   cout << "------------- Comprar Ingresso ------------ \n";
 		if(evento.get_qtdEventos() == 0){
 			cout << "------------- Alerta ! ------------ \n";
@@ -400,12 +463,12 @@ void Menu(){ // Menu
 	do{
   int op;
 			cout << " ----------- Escolha uma opção abaixo ------- \n";
-			cout << "1 - Criar perfil \n 2 - Criar evento\n 3 - Listar Eventos | Comprar ingressos \n 4 - Pedir Reembolso \n";
+			cout << " 1 - Criar perfil \n 2 - Criar evento\n 3 - Listar Eventos | Comprar ingressos \n 4 - Pedir Reembolso \n";
 			cout << "---------------------------------------------\n \n";
 			cin >> op;
 		switch(op)
 			{
-				case 1://Criar Perfil
+				case 1:
 					CriarPerfil();
 				break;
 				case 2://Criar evento
@@ -422,5 +485,6 @@ void Menu(){ // Menu
 	}while(controlemenu == 0);
 }
 int main() { //Main
+	setlocale (LC_ALL,"portuguese");
 	Menu();
 }

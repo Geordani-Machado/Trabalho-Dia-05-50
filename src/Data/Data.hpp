@@ -12,8 +12,8 @@ using namespace std;
 			int get_ano();
 			void formatar(); //formata  pro padrão dd//mm/aa
 			string getDataFormatada();
+			void CriarData();
 			
-
     private:
       int dia;
       int mes;

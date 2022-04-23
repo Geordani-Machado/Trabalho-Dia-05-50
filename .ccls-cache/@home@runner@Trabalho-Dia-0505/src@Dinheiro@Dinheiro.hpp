@@ -11,16 +11,16 @@ using namespace std;
 			void set_cartaoNome(string n);
 			void set_cartaoValidade(string validade);
 			void set_pix(string p);
+			bool pagar(string pagar, string receber);
       int get_cartaoNumero();
 			int get_cartaCodigoDeValidacao();
 			string get_cartaoNome();
-			string get_cartaoValidade(s);
+			string get_cartaoValidade();
 			string get_pix();
       double get_real();
       double get_dolar();
       double get_euro ();
 			
-
     private:
       double real=0;
       double dolar=0;
@@ -30,8 +30,4 @@ using namespace std;
       string nome_cartao;
       string validade_cartao;
       string pix;
-
-			
-      
-      
   };
