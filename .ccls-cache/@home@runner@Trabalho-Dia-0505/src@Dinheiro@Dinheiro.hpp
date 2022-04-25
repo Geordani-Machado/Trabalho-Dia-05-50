@@ -11,6 +11,7 @@ using namespace std;
 			void set_cartaoNome(string n);
 			void set_cartaoValidade(string validade);
 			void set_pix(string p);
+			
 			bool pagar(string pagar, string receber);
       int get_cartaoNumero();
 			int get_cartaCodigoDeValidacao();

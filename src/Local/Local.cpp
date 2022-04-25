@@ -1,53 +1,114 @@
 #include "Local.hpp"
+#include "../Evento/Evento.hpp"
 
-  void Local::set_rua(string r){
-    rua = r;
-  }
+Evento evento;
 
-  void Local::set_bairro(string b){
-    bairro = b;
-  }
-	
-  void Local::set_numero(int n){
-    numero = n;
-  }
-	
-  void Local::set_cidade(string c){
-    cidade = c;
-  }
-	
-  void Local::set_estado(string e){
-    estado = e;
-  }
-	
-  void Local::set_pais(string p){
-    pais = p;
-  }
+string ne ,u, le, r, b, c , e , p;
+int n;
   
-  void Local::set_url(string u){
-    url = u;
-  } 
+  void Local::set_rua(string r) {rua = r;}
 
-  string Local::get_rua(){
-		return rua;
-	}
-	string Local::get_bairro(){
-		return  bairro;
-	}
-	int Local::get_numero(){
-		return numero;
-	}
-	string Local::get_cidade(){
-    return cidade;
-  }
-	string Local::get_estado(){
-    return estado;
-  }
-	string Local::get_pais(){
-    return pais;
-  }
-	string Local::get_url(){
-		return url;
-  }
+  void Local::set_bairro(string b){bairro = b;}
+	
+  void Local::set_numero(int n){numero = n;}
+	
+  void Local::set_cidade(string c){cidade = c;}
+	
+  void Local::set_estado(string e){estado = e;}
+	
+  void Local::set_pais(string p){pais = p;}
+  
+  void Local::set_url(string u){url = u;} 
+
+  string Local::get_rua(){return rua;}
+	
+  string Local::get_bairro(){return bairro;}
+	
+  int Local::get_numero(){return numero;}
+	
+  string Local::get_cidade(){return cidade;}
+	
+  string Local::get_estado(){return estado;}
+	
+  string Local::get_pais(){return pais;}
+	
+  string Local::get_url(){return url;}
+
+  void Local::CriarLocal(){
+
+   int opcao;
+		
+	do{
+		cout << "O Evento é Presencial ou Online ? \n";
+		cout << "1 - Presencial | 2 Online \n";
+		cin >> opcao;
+		switch (opcao){
+      case 1://presencial
+					
+          cout << "Qual o endereço do evento? \n";
+        	cout << "Digite a rua: ";
+          cin >> r;
+					rua = r;
+          cout << "Digite o bairro: ";
+          cin >> b;
+					bairro = b;
+          cout << "Digite a cidade: ";
+          cin >> c;
+          cidade = c;
+          cout << "Digite o numero do endereço: ";
+          cin >> n;
+          numero = n;
+          cout << "Digite o estado onde vai ocorrer o evento: ";
+          cin >> e;
+					estado = e;
+				//cria uma subcondição
+       
+        int soun;
+				cout << "------------------------------------\n";
+					cout << "O Evento é Internacional ? ";
+					cout << "1 - Sim | 2 - Não \n";
+          cin >> soun;
+					
+				cout << "------------------------------------\n";
+					switch(soun)
+						{
+							case 1:
+								cout << "Digite em qual pais o evento vai ocorrer: ";
+          			cin >> p;
+								pais = p;
+							break;
+							case 2:
+								pais= "Brasil";
+        			cout << " --------------- Sucesso! ------------ \n";
+							cout << " O Evento foi criado com Exito ;) \n";
+							cout << " ---------------------------------- \n \n";
+							break;
+							default:
+							cout << " --------------- Erro ------------ \n";
+							cout << " Digite uma Opção valida! \n";
+							cout << " ---------------------------------- \n";
+						} break;
+			
+			case 2://Online
+				cout << "Qual o link para acessar o evento: \n";
+				cout << "Digite a URl: ";
+				cin >> u;
+				url = u;
+				//localEvento = url;
+				evento.set_local(u);
+				cout << " --------------- Sucesso! ------------ \n";
+				cout << " O Evento foi criado com Exito ;) \n";
+				cout << " ---------------------------------- \n \n";
+			break;
+			
+			default:
+			cout << " --------------- Erro ------------ \n";
+			cout << " Digite uma Opção valida! \n";
+			cout << " ---------------------------------- \n";
+		}
+	}while(opcao < 1 || opcao >2);
+
+	
+}
 
  

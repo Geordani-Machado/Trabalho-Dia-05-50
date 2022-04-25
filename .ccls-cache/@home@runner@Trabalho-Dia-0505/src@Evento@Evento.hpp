@@ -25,8 +25,8 @@ using namespace std;
       int get_mes();
       int get_ano();
       int get_qtdEventos();
+			void CriarEvento();
 	    
-    
       private:
   			string nomeEvento;
   			string nomeProdutor;

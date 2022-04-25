@@ -7,6 +7,7 @@ using namespace std;
 			void set_minuto(int minuto);
 			int get_hora();
 			int get_minuto();
+			void CriarHorario();
 
     private:
 			int hora;

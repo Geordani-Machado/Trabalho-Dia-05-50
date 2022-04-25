@@ -9,6 +9,7 @@ using namespace std;
       string get_nome();
 			string get_email();
 			string get_senha();
+			void CriarPerfil();
 
     private:
 			string nome;

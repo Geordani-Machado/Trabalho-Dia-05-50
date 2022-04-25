@@ -1,30 +1,14 @@
 #include "Dinheiro.hpp"
 #include "../Pessoa/Pessoa.hpp"
 using namespace std;
-Pessoa pessoa;
+//Pessoa pessoa;
 
-  void Dinheiro::set_real(double r){
-    real = r;
-}
-  void Dinheiro::set_dolar(double d){
-    dolar = d;
-}
-  
-  void Dinheiro::set_euro(double e){
-    euro = e;
-  }
-      
-  double Dinheiro::get_real(){
-    return real;
-  }
-      
-  double Dinheiro::get_dolar(){
-    return dolar;
-  }
-  
-  double Dinheiro::get_euro (){
-    return euro;
-  }
+  void Dinheiro::set_real(double r){real = r;}
+  void Dinheiro::set_dolar(double d){dolar = d;}
+  void Dinheiro::set_euro(double e){euro = e;}  
+  double Dinheiro::get_real(){return real;}   
+  double Dinheiro::get_dolar(){return dolar;}
+  double Dinheiro::get_euro (){return euro;}
 
 bool Dinheiro::pagar(string pagar, string receber){
 	int i;

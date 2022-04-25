@@ -17,6 +17,7 @@ using namespace std;
 			string get_estado();
 			string get_pais();
 			string get_url();
+			void CriarLocal();
 			
     private:
 			string rua;
