@@ -1,15 +1,6 @@
 #include "Evento.hpp"
 using namespace std;
 
-
-#include "../Horario/Horario.hpp"
-#include "../Data/Data.hpp"
-#include "../Local/Local.hpp"
-
-Horario horario;
-Data data;
-Local ClasLocal;
-
 void Evento::set_produtor(string produtor){ // Recebe e define o nome do produtor do evento
 	nomeProdutor = produtor;
 	}
@@ -90,19 +81,4 @@ int Evento::get_qtdEventos() {
   return qtdEventos;
 }
 
-string ne;
 
-void Evento::CriarEvento(){
-	setlocale (LC_ALL,"portuguese");
-  cout << "------------- Criar Evento ------------ \n";
-	cout << "Qual o nome do Evento? \n";
-	cout << "Digite o nome do Evento: ";
-	cin >> ne;
-	nomeEvento = ne;
-	cout << "------------------------------------\n";
-	data.CriarData(); 
-	cout << "\n";
-	horario.CriarHorario();
-	cout << "\n";
-	ClasLocal.CriarLocal();
-}

@@ -1,11 +1,11 @@
 #include "Local.hpp"
 #include "../Evento/Evento.hpp"
 
-Evento evento;
+Evento ClassEvento;
 
 string ne ,u, le, r, b, c , e , p;
 int n;
-  
+
   void Local::set_rua(string r) {rua = r;}
 
   void Local::set_bairro(string b){bairro = b;}
@@ -47,19 +47,28 @@ int n;
 					
           cout << "Qual o endereço do evento? \n";
         	cout << "Digite a rua: ";
-          cin >> r;
+					cin.ignore();
+    			getline( cin, r);
 					rua = r;
           cout << "Digite o bairro: ";
-          cin >> b;
+					cin.ignore();
+    			getline( cin, b);
 					bairro = b;
           cout << "Digite a cidade: ";
-          cin >> c;
+          cin.ignore();
+    			getline( cin, c);
           cidade = c;
-          cout << "Digite o numero do endereço: ";
+          cout << "Digite o número do endereço: ";
           cin >> n;
-          numero = n;
+					
+					 if(n == 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9 ){
+						 numero = n;
+					}else{
+						 cout << "Digite novamente! , tipo de valor não aceito :( ";
+					}
           cout << "Digite o estado onde vai ocorrer o evento: ";
-          cin >> e;
+					cin.ignore();
+    			getline( cin, e);
 					estado = e;
 				//cria uma subcondição
        
@@ -73,8 +82,9 @@ int n;
 					switch(soun)
 						{
 							case 1:
-								cout << "Digite em qual pais o evento vai ocorrer: ";
-          			cin >> p;
+								cout << "Digite em qual país o evento vai ocorrer: ";
+          			cin.ignore();
+    						getline(cin, p);		
 								pais = p;
 							break;
 							case 2:
@@ -92,10 +102,11 @@ int n;
 			case 2://Online
 				cout << "Qual o link para acessar o evento: \n";
 				cout << "Digite a URl: ";
-				cin >> u;
+				cin.ignore();
+    		getline(cin, u);
 				url = u;
 				//localEvento = url;
-				evento.set_local(u);
+				ClassEvento.set_local(u);
 				cout << " --------------- Sucesso! ------------ \n";
 				cout << " O Evento foi criado com Exito ;) \n";
 				cout << " ---------------------------------- \n \n";
@@ -106,7 +117,7 @@ int n;
 			cout << " Digite uma Opção valida! \n";
 			cout << " ---------------------------------- \n";
 		}
-	}while(opcao < 1 || opcao >2);
+	}while(opcao < 1 || opcao > 2);
 
 	
 }

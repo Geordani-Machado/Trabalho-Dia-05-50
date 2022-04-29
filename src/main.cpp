@@ -1,19 +1,52 @@
 #include <iostream>
+#include <string>
 #include <locale>
+#include <vector>
 using namespace std;
 
 // includes
 #include "./Pessoa/Pessoa.hpp" 
-#include "./Evento/Evento.hpp"
 #include "./Ingresso/Ingresso.hpp"
+#include "./Evento/Evento.hpp"
+#include "./Data/Data.hpp"
+#include "./Local/Local.hpp"
+#include "./Horario/Horario.hpp"
 
 // cria a invocação para chamar a classe
 Pessoa pessoa;
 Evento evento;
 Ingresso ingresso;
+Data data;
+Local local;
+Horario horario;
+
+//sistema de cores
+#define VERDE  "\x1b[32m"
+#define AMARELO "\x1b[93m"
+#define VERMELHO "\x1b[31m"
+#define AZUL "\x1b[34m"
+#define RESET "\x1b[0m"
 
 // variaveis globais
 	int controlemenu = 0, controle=1;
+	string NomeEvento;
+
+void CriarEvento(){
+	
+	setlocale (LC_ALL,"portuguese");
+  cout << "------------- Criar Evento ------------ \n";
+	cout << "Qual o nome do Evento? \n";
+	cout << "Digite o nome do Evento: ";
+	cin.ignore();
+	getline(cin ,NomeEvento);
+	evento.set_nomeEvento(NomeEvento);
+	cout << "------------------------------------\n";
+	data.CriarData(); 
+	cout << "\n";
+	horario.CriarHorario();
+	cout << "\n";
+	local.CriarLocal();
+}
 
 void ListarEvento () {
   cout << "------------- Listar Eventos ------------ \n";
@@ -24,6 +57,7 @@ void ListarEvento () {
 	}
   evento.get_nomeEvento();
 }
+
 void ComprarIngresso(){ // Comprar Ingresso
   cout << "------------- Comprar Ingresso ------------ \n";
 		if(evento.get_qtdEventos() == 0){
@@ -53,12 +87,13 @@ void PedirReembolso() { // Pedir Reembolso
 			}
 	}while(achou == 0);
 }
+
 void Menu(){ // Menu 
 	do{
   int op;
 			cout << " ----------- Escolha uma opção abaixo ------- \n";
-			cout << "1 - Criar perfil \n ";
-			cout << "2 - Criar evento\n ";
+			cout << "1 - Criar perfil \n";
+			cout << "2 - Criar evento\n";
 			cout <<	"3 - Listar Eventos | Comprar ingressos \n";
 		  cout << "4 - Pedir Reembolso \n";
 			cout << "---------------------------------------------\n \n";
@@ -69,7 +104,7 @@ void Menu(){ // Menu
 					pessoa.CriarPerfil();
 				break;
 				case 2://Criar evento
-					evento.CriarEvento();
+					CriarEvento();
 				break;
 				case 3: //Listar Eventos | Comprar Ingressos
 					ListarEvento();
