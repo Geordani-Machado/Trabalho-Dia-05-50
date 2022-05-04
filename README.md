@@ -10,11 +10,13 @@ Projeto no Figma:
    <br/> sistema inicia pela main, a main chama as demais classes e funções que estão dentro delas.
    <br/>
    <br/>
-- Limites Logicos do Sistema:
-- * Main:
-  * Pessoas[10] | sistema aceita no maximo o cadastro de 10 pessoas , para armazenar mais pessoas o valor "10" dentro do vetor deve ser mudado para o valor desejado. <br/> <br/>
-  * Eventos[50] | sistema aceita no maximo o cadastro de 50 Eventos , para armazenar mais eventos o valor "50" dentro do vetor deve ser mudado para o valor desejado. <br/> <br/>
-  * Ingressos[200] | sistema aceita no maximo o cadastro de 200 Ingressos , para armazenar mais ingressos o valor "200" dentro do vetor deve ser mudado para o valor desejado. <br/> <br/>
+- Fluxo Lógicos do Sistema:
+  <br/><br/>
+- Main:
+  * chama a classe evento.
+  <br/><br/>
+- Evento:
+  * evento chama loca, data, horario, ingresso
 
 	<br/>
  

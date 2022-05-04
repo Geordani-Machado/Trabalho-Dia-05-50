@@ -1,5 +1,6 @@
 #include "Local.hpp"
 #include "../Evento/Evento.hpp"
+#include "../color.hpp"
 
 Evento ClassEvento;
 
@@ -75,7 +76,7 @@ int n;
         int soun;
 				cout << "------------------------------------\n";
 					cout << "O Evento é Internacional ? ";
-					cout << "1 - Sim | 2 - Não \n";
+					cout << "1 - Sim 🤩 | 2 - Não 🌍 \n";
           cin >> soun;
 					
 				cout << "------------------------------------\n";
@@ -89,12 +90,12 @@ int n;
 							break;
 							case 2:
 								pais= "Brasil";
-        			cout << " --------------- Sucesso! ------------ \n";
-							cout << " O Evento foi criado com Exito ;) \n";
+        			cout << color::green << " --------------- Sucesso! ------------ \n" << color::off;
+							cout << " O Evento foi criado com Sucesso! 🤩 \n";
 							cout << " ---------------------------------- \n \n";
 							break;
 							default:
-							cout << " --------------- Erro ------------ \n";
+							cout << color::red << " --------------- Erro ❗ ------------ \n" << color::off;
 							cout << " Digite uma Opção valida! \n";
 							cout << " ---------------------------------- \n";
 						} break;
@@ -107,8 +108,8 @@ int n;
 				url = u;
 				//localEvento = url;
 				ClassEvento.set_local(u);
-				cout << " --------------- Sucesso! ------------ \n";
-				cout << " O Evento foi criado com Exito ;) \n";
+				cout << color::green << " --------------- Sucesso! ------------ \n" << color::off;
+				cout << " O Evento foi criado com Exito 🤩 \n";
 				cout << " ---------------------------------- \n \n";
 			break;
 			

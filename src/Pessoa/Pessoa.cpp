@@ -1,4 +1,5 @@
 #include "Pessoa.hpp"
+#include "../color.hpp"
 
 void Pessoa::set_email(string e){email = e;}
 void Pessoa::set_nome(string n){nome = n;}
@@ -11,7 +12,8 @@ void Pessoa::CriarPerfil(){
 	string n, e, s;
 	cout << "------ Criar Perfil ------- \n";
 	cout << "Qual o seu nome:\n";
-	cin >> nome;
+	cin.ignore();
+	getline(cin ,n);
 	nome = n;
 	cout << "Qual o seu e-mail:\n";
   cin >> email;
@@ -19,7 +21,8 @@ void Pessoa::CriarPerfil(){
 	cout << "Qual a sua senha:\n";
 	cin >> senha;
 	senha = s;
-	cout << "------------- Sucesso ! ------------ \n";
-	cout << "Perfil criado com sucesso! :) \n";
+	cout << color::green << "------------- Sucesso ! ------------ \n" << color::off;
+	cout << "Perfil criado com sucesso! 🤩 \n";
 	cout << "------------------------------------ \n \n";
 }
+

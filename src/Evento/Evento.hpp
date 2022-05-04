@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
   class Evento{
@@ -30,14 +32,13 @@ using namespace std;
       private:
   			string nomeEvento;
   			string nomeProdutor;
-        int dia;
-        int mes;
-        int ano;
+        vector<int> dia;
+        vector<int>  mes;
+        vector<int>  ano;
 				string local;
 				int hora;
 				int minuto;
 				int qtdIngresso;
 				int vlIngresso;
 				int qtdEventos;
-				
   };

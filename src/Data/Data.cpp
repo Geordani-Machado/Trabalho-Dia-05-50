@@ -6,6 +6,8 @@ int controlemenu1 = 0, d, m, a;
 int controle1=1;
 bool b1 = 0; 
 
+int anoatual = 2022;
+
 void Data::set_dia(int d){dia = d;}
 void Data::set_mes(int m){mes = m;}
 void Data::set_ano(int a){ano = a;}
@@ -22,22 +24,31 @@ void DataErro(){
 }
 
 void Data::CriarData(){
+	do{
 	cout << "Qual ano você deseja criar o evento? \n";
 	cout << "Digite o ano: ";
   cin >> a;
+		if(a<2022){
+			DataErro();
+		}
+	}while(a<2022);
+
+	ano = a;
+	
 	//recebe o valor de entrada ano e verifica se o mesmo é bissexto ou não , 
 	//ptinta na tela o resultado e se for bissexto define o valor da variavel b1 para 1.
+
 	if(ano % 400 == 0){
-        cout << "É bissexto" << endl;
-				b1=1;
-    }else if( (ano % 4 == 0) && (ano % 100 != 0) ){
+		cout << "É bissexto" << endl;
+					b1 =1;
+	}else if((ano % 4 == 0) && (ano % 100 != 0) ){
             cout << "É bissexto" << endl;
 					b1 =1;
 			}else{
         cout << "Não é bissexto" << endl;
 				b1 = 0;
 		}
-  	ano = a;
+  	
 	
 	// controle de mes e dias corespondente a cada um deles.
 	cout << "------------------------------------\n";
@@ -52,7 +63,7 @@ void Data::CriarData(){
 				do{
 					cout << "------- Janeiro -----\n";
   				cout << "Qual a data do evento? \n";
-					cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 					cout <<"|29| |30| |31| \n";
@@ -72,7 +83,7 @@ break;
 				do{
 				cout << "------- Fevereiro-----\n";
   			cout << "Qual a data do evento? \n";
-    		cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10 \n";
+    		cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
     		cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 				cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 					if(b1==1){
@@ -94,7 +105,7 @@ break;
 				do {
     			cout << "------- Março -----\n";
           cout << "Qual a data do evento? \n";
-					cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 					cout <<"|29| |30| |31| \n";
@@ -115,7 +126,7 @@ break;
 				do {
   				cout << "------- Abril -----\n";
   				cout << "Qual a data do evento? \n";
-					cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 					cout <<"|29| |30| \n";
@@ -135,7 +146,7 @@ break;
 				do {
   				cout << "------- Maio -----\n";
           cout << "Qual a data do evento? \n";
-					cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 					cout <<"|29| |30| |31| \n";
@@ -156,7 +167,7 @@ break;
 				do {
   				cout << "------- Junho -----\n";
         	cout << "Qual a data do evento? \n";
-					cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 					cout <<"|29| |30| \n";
@@ -177,7 +188,7 @@ break;
 			do {
   					cout << "------- Julho -----\n";
             cout << "Qual a data do evento? \n";
-						cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 						cout <<"|29| |30| |31| \n";
@@ -197,7 +208,7 @@ break;
 						do {
   					cout << "------- Agosto -----\n";
             cout << "Qual a data do evento? \n";
-						cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 						cout <<"|29| |30| |31| \n";
@@ -218,7 +229,7 @@ break;
 							do {
   					cout << "------- Setembro -----\n";
             cout << "Qual a data do evento? \n";
-						cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 						cout <<"|29| |30| \n";
@@ -239,7 +250,7 @@ break;
 				do {
   					cout << "------- Outubro -----\n";
             cout << "Qual a data do evento? \n";
-						cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 						cout <<"|29| |30| |31| \n";
@@ -260,7 +271,7 @@ break;
 				do {
   					cout << "------- Novembro -----\n";
             cout << "Qual a data do evento? \n";
-						cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 						cout <<"|29| |30| \n";
@@ -281,7 +292,7 @@ break;
 				do {
   					cout << "------- Dezembro -----\n";
             cout << "Qual a data do evento? \n";
-						cout << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
 						cout <<"|29| |30| |31| \n";
