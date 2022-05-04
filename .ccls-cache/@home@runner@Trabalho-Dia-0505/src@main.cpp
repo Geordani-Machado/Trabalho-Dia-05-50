@@ -5,6 +5,12 @@
 #include "color.hpp"
 using namespace std;
 
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
 // includes
 #include "./Pessoa/Pessoa.hpp" 
 #include "./Ingresso/Ingresso.hpp"
@@ -86,6 +92,83 @@ void PedirReembolso() { // Pedir Reembolso
 			}
 	}while(achou == 0);
 }
+
+// -- Menu para produtor
+void MenuProdutor(){
+	do{
+	int i;
+	cout << color::blue << "----------------------------------------------------- \n" << color::off;
+  cout << color::blue << " 👋 Olá" << color::off;
+	cout << pessoa.get_nome() << endl;
+	cout << " \n";
+	cout << "Painel de Peodutor.\n \n";
+	cout << "Escolha uma das opções abaixo:\n";
+	cout << "1 - Criar evento\n";
+	cout <<	"2 - Listar Eventos | Comprar ingressos \n";
+	cin >> i;
+	cout << color::blue << "----------------------------------------------------- \n" << color::off;
+
+	switch(i){
+		case 1:
+			CriarEvento();
+		break;
+		case 2:
+			ListarEvento();
+		break;
+	}
+	}while(controlemenu==2);
+	
+}
+// ---- menu do usuario
+void MenuUsuario(){
+  int e;
+    do{
+		cout << color::blue << "----------------------------------------------------- \n" << color::off;
+		cout << color::blue << " 👋 Olá " << color::off;
+		cout << pessoa.get_nome() << endl;
+		cout << " \n";
+		cout << "Escolha uma das opções abaixo:\n";
+  	cout <<	"1 - Listar Eventos | Comprar ingressos \n";
+  	cout << "2 - Pedir Reembolso \n";
+    cin >> e;
+		cout << color::blue << "----------------------------------------------------- \n" << color::off;
+      switch (e){
+        case 1:
+          ListarEvento();
+					ComprarIngresso();
+        break;
+
+        case 2:
+          PedirReembolso();
+				break;
+      }
+      }while(controlemenu==3);
+  }
+//sistema para logar o usuario no sistema
+void Logar(){
+	string email;
+	string senha;
+	cout << "Entrar no sistema...\n";
+	sleep(1);
+	cout << "digite o seu e-mail \n";
+	cin >> email;
+	cout << "digite o sua senha \n";
+	cin >> senha;
+
+	if(email == pessoa.get_email() && senha == pessoa.get_senha()){
+		if(pessoa.get_isprodutor() == 0){
+			MenuUsuario();
+			controlemenu = 3;
+		}else if(pessoa.get_isprodutor() == 1){
+			MenuProdutor();
+			controlemenu = 2;
+		}
+	}else{
+		cout << color::red << "E-mail ou senha incorretos \n";
+	}
+	
+}
+
 // ----------- Menu da aplicação -----------
 void Menu(){ // Menu 
 	do{
@@ -104,37 +187,14 @@ void Menu(){ // Menu
 					pessoa.CriarPerfil();
 				break;
 				case 2://Criar evento
-					CriarEvento();
+					Logar();
 				break;
-				case 3: //Listar Eventos | Comprar Ingressos
-					ListarEvento();
-					ComprarIngresso();
-				break;
-				case 4://Pedir reembolso
-					PedirReembolso();
-				break;
+				default:
+				cout << color::redn << "--------------------- Erro ❗ -----------------------\n" << color::off;
+				cout << "Opção inválida , tente novamente\n";
+				cout << "---------------------------------------------\n";
 			} //switch
 	}while(controlemenu == 0);
-}
-
-// -- Menu para produtor
-
-void MenuProdutor(){
-  cout << color::blue << " 👋 Olá \n" << color::off;
-	cout << pessoa.get_nome();
-	cout << "2 - Criar evento\n";
-	cout <<	"3 - Listar Eventos | Comprar ingressos \n";
-	cout << "4 - Pedir Reembolso \n";
-	
-}
-
-
-// ---- menu do usuario
-void MenuUsuario(){
-  
-	cout <<	"3 - Listar Eventos | Comprar ingressos \n";
-	cout << "4 - Pedir Reembolso \n";
-  
 }
 
 // ----------- Main -----------

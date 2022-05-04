@@ -18,6 +18,7 @@ using namespace std;
 			string nome;
 			string senha;
 			string email;
+      bool isProdutor;
 			
 
 
