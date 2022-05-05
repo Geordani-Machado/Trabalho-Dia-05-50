@@ -62,10 +62,10 @@ int n;
           cout << "Digite o número do endereço: ";
           cin >> n;
 					
-					 if(n == 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9 ){
+					 if(n == 0 || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9 ){
 						 numero = n;
 					}else{
-						 cout << "Digite novamente! , tipo de valor não aceito :( ";
+						 cout << "Digite novamente! , tipo de valor não aceito 😔 ";
 					}
           cout << "Digite o estado onde vai ocorrer o evento: ";
 					cin.ignore();
@@ -114,7 +114,7 @@ int n;
 			break;
 			
 			default:
-			cout << " --------------- Erro ------------ \n";
+			cout << color::red << " --------------- Erro❗ ------------ \n" << color;
 			cout << " Digite uma Opção valida! \n";
 			cout << " ---------------------------------- \n";
 		}

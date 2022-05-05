@@ -14,7 +14,7 @@ string Pessoa::get_senha(){return senha;}
 void Pessoa::CriarPerfil(){
 	string n, e, s;
 	int p;
-	cout << "------ Criar Perfil ------- \n";
+	cout << color::yellow << "------ Criar Perfil 🙋🏻‍♀️🙋🏻‍♂️ ------- \n" << color::off;
 	cout << "Qual o seu nome:\n";
 	cin.ignore();
 	getline(cin ,n);

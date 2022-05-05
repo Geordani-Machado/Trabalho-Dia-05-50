@@ -21,11 +21,7 @@ Projeto no Figma:
 	<br/>
  
 - # Sistema de Cores:
- - VERDE = "\x1b[32m"
- - AMARELO = "\x1b[93m"
- - VERMELHO = "\x1b[31m"
- - AZUL = "\x1b[34m"
- - RESET = "\x1b[0m"
+ << color::(cor desejada de acordo com a lista de corres disponiveis na classe color.hpp)
 
 # Classe Pessoa:
 - pessoa :

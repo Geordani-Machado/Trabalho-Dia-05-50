@@ -19,6 +19,7 @@ using namespace std;
 #include "./Data/Data.hpp"
 #include "./Local/Local.hpp"
 #include "./Horario/Horario.hpp"
+#include "./Carteira/Carteira.hpp"
 
 // cria a invocação para chamar a classe
 Pessoa pessoa;
@@ -27,10 +28,13 @@ Ingresso ingresso;
 Data data;
 Local local;
 Horario horario;
+Carteira carteira;
 
 // variaveis globais
 	int controlemenu = 0, controle=1;
 	string NomeEvento;
+
+void Menu();
 
 void CriarEvento(){
 
@@ -62,6 +66,7 @@ void ListarEvento () {
 }
 
 void ComprarIngresso(){ // Comprar Ingresso
+	
   cout << color::green << "------------- Comprar Ingresso ------------ \n" << color:: off;
 		if(evento.get_qtdEventos() == 0){
 			cout << color::yellow << "------------- Alerta ❗ ------------ \n";
@@ -107,6 +112,8 @@ void MenuProdutor(){
 	cout << "Escolha uma das opções abaixo:\n";
 	cout << "1 - Criar evento\n";
 	cout <<	"2 - Listar Eventos | Comprar ingressos \n";
+	cout << "3 - Ver a Carteira \n";
+	cout << "4 - Deslogar \n";
 	cin >> i;
 	cout << color::blue << "----------------------------------------------------- \n" << color::off;
 
@@ -117,9 +124,16 @@ void MenuProdutor(){
 		case 2:
 			ListarEvento();
 		break;
+		case 3:
+		carteira.Show();
+		controlemenu=2;
+		break;
+		case 4:
+			controlemenu=0;
+			Menu();
+		break;
 	}
 	}while(controlemenu==2);
-	
 }
 // ---- menu do usuario
 void MenuUsuario(){
@@ -131,8 +145,9 @@ void MenuUsuario(){
 		cout << " \n";
 		cout << "Escolha uma das opções abaixo:\n";
   	cout <<	"1 - Listar Eventos | Comprar ingressos \n";
-		cout << "2 - Adicionar Dinheiro a Carteira \n";
-		
+		cout << "2 - Ver a Carteira \n";
+		cout << "3 - Pedir Reembolso \n";
+    cout << "4 - Deslogar \n";
     cin >> e;
 		cout << color::blue << "----------------------------------------------------- \n" << color::off;
       switch (e){
@@ -140,12 +155,24 @@ void MenuUsuario(){
           ListarEvento();
 					ComprarIngresso();
         break;
-
+        
         case 2:
+					carteira.Show();
+					controlemenu=3;
+				break;
+
+        case 3:
           PedirReembolso();
 				break;
+				
+        case 4:
+			    controlemenu=0;
+					Menu();
+		    break;
+        
       }
       }while(controlemenu==3);
+	
   }
 //sistema para logar o usuario no sistema
 void Logar(){

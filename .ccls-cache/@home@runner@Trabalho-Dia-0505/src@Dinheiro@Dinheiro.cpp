@@ -1,5 +1,6 @@
 #include "Dinheiro.hpp"
 #include "../Pessoa/Pessoa.hpp"
+#include "../color.hpp"
 using namespace std;
 //Pessoa pessoa;
 
@@ -19,7 +20,7 @@ bool Dinheiro::pagar(string pagar, string receber){
   string codValidacao;
   int dataValidade;
 	
-	cout << "--------- Pagar ---------";
+	cout << color::green << "--------- 💲Pagar💲 ---------" << color::off;
 	cout << "Qual o tipo do pagamento ?";
 	cout << "| 1 - á vista | | 2 - cartão | | 3 - Pix |";
 	cin >> i;
@@ -27,14 +28,14 @@ bool Dinheiro::pagar(string pagar, string receber){
 	switch (i) {
 
     case 1:
-      cout << "------- À VISTA ------- \n";
+      cout << "------- À VISTA 💵 ------- \n";
 			cout << "Qual o valor você deseja tranferir ?";
 			cout << "Digite o valor :"; 
 			cin >> valor;
 		break;
 
     case 2:
-      cout << "------- CARTÃO ------- \n";
+      cout << color::cyan << "------- CARTÃO 💳 ------- \n" << color::off;
       cout << "Digite o número do seu cartão: ";
       cin >> numCartao;
 			cout << "Digite o nome do seu cartão: "; 
@@ -46,7 +47,7 @@ bool Dinheiro::pagar(string pagar, string receber){
     break;
 
     case 3:
-      cout << "------- PIX ------- \n";
+      cout << color::blue << "------- PIX 💠 ------- \n" << color::off;
       cout << "Digite o numero do pix:";
       cin >> pix;
 			cout << "Qual o valor você deseja tranferir ?";

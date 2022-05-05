@@ -9,7 +9,7 @@ int h1 , m1;
 
 void Horario::CriarHorario(){ // Criar Horario
   cout << "------------------------------------\n";
-	cout << "Qual o horario do evento? \n";
+	cout << "Qual o horario do evento 🕐? \n";
   cout << "Digite a hora: ";
   cin >> h1;
 	hora = h1;
