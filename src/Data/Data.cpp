@@ -1,4 +1,5 @@
 #include "Data.hpp"
+#include "../color.hpp"
 using namespace std;
 
 //variaveis globais
@@ -18,7 +19,7 @@ int Data::get_mes(){return mes;}
 int Data::get_ano(){return ano;}
 
 void DataErro(){
-	cout << " --------------- Erro ------------ \n";
+	cout << color::redn << " --------------- Erro❗ ------------ \n" << color::off;
 	cout << " Digite uma Opção valida! \n";
 	cout << " ---------------------------------- \n";
 }
@@ -63,10 +64,10 @@ void Data::CriarData(){
 				do{
 					cout << "------- Janeiro -----\n";
   				cout << "Qual a data do evento? \n";
-					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-					cout <<"|29| |30| |31| \n";
+					cout <<"|29| |30| |31| \n" << color::off;
 					cout << "Digite o dia: ";
 					cin >> d;
 						if(d >= 1 && d <= 31){
@@ -83,11 +84,11 @@ break;
 				do{
 				cout << "------- Fevereiro-----\n";
   			cout << "Qual a data do evento? \n";
-    		cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+    		cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
     		cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
-				cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
+				cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n"<< color::off;
 					if(b1==1){
-						cout <<"|29| \n";
+						cout << color::red << "|29| \n" << color::off;
 					}
 					cout << "Digite o dia: ";
 					cin >> d;
@@ -105,10 +106,10 @@ break;
 				do {
     			cout << "------- Março -----\n";
           cout << "Qual a data do evento? \n";
-					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-					cout <<"|29| |30| |31| \n";
+					cout <<"|29| |30| |31| \n" << color::off;
        		cout << "Digite o dia: ";
 					cin >> d;
 								if(d >= 1 && d <= 31){
@@ -126,10 +127,10 @@ break;
 				do {
   				cout << "------- Abril -----\n";
   				cout << "Qual a data do evento? \n";
-					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-					cout <<"|29| |30| \n";
+					cout <<"|29| |30| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 30){
@@ -146,10 +147,10 @@ break;
 				do {
   				cout << "------- Maio -----\n";
           cout << "Qual a data do evento? \n";
-					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-					cout <<"|29| |30| |31| \n";
+					cout <<"|29| |30| |31| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 31){
@@ -167,10 +168,10 @@ break;
 				do {
   				cout << "------- Junho -----\n";
         	cout << "Qual a data do evento? \n";
-					cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+					cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 					cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 					cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-					cout <<"|29| |30| \n";
+					cout <<"|29| |30| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 30){
@@ -188,10 +189,10 @@ break;
 			do {
   					cout << "------- Julho -----\n";
             cout << "Qual a data do evento? \n";
-						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-						cout <<"|29| |30| |31| \n";
+						cout <<"|29| |30| |31| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 31){
@@ -208,10 +209,10 @@ break;
 						do {
   					cout << "------- Agosto -----\n";
             cout << "Qual a data do evento? \n";
-						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-						cout <<"|29| |30| |31| \n";
+						cout <<"|29| |30| |31| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 31){
@@ -229,10 +230,10 @@ break;
 							do {
   					cout << "------- Setembro -----\n";
             cout << "Qual a data do evento? \n";
-						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-						cout <<"|29| |30| \n";
+						cout <<"|29| |30| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 30){
@@ -250,10 +251,10 @@ break;
 				do {
   					cout << "------- Outubro -----\n";
             cout << "Qual a data do evento? \n";
-						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-						cout <<"|29| |30| |31| \n";
+						cout <<"|29| |30| |31| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 31){
@@ -271,10 +272,10 @@ break;
 				do {
   					cout << "------- Novembro -----\n";
             cout << "Qual a data do evento? \n";
-						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-						cout <<"|29| |30| \n";
+						cout <<"|29| |30| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 30){
@@ -292,10 +293,10 @@ break;
 				do {
   					cout << "------- Dezembro -----\n";
             cout << "Qual a data do evento? \n";
-						cout <<"|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
+						cout << color::red << "|1| |2| |3| |4| |5| |6| |7| |8| |9| |10| \n";
 						cout <<"|11| |12| |13| |14| |15| |16| |17| |18| |19| \n";
 						cout <<"|20| |21| |22| |23| |24| |25| |26| |27| |28| \n";
-						cout <<"|29| |30| |31| \n";
+						cout <<"|29| |30| |31| \n" << color::off;
     			cout << "Digite o dia: ";
 					cin >> d;
 			if(d >= 1 && d <= 31){

@@ -5,6 +5,7 @@
 #include "color.hpp"
 using namespace std;
 
+//sistema de sleep
 #ifdef _WIN32
 #include <Windows.h>
 #else
@@ -89,6 +90,7 @@ void PedirReembolso() { // Pedir Reembolso
 					cout << "------------------------------------ \n \n" << color::off;
 				}else{
 				achou =1;
+				ingresso.remover_proprietario(pessoa.get_nome());
 			}
 	}while(achou == 0);
 }
@@ -98,10 +100,10 @@ void MenuProdutor(){
 	do{
 	int i;
 	cout << color::blue << "----------------------------------------------------- \n" << color::off;
-  cout << color::blue << " 👋 Olá" << color::off;
+  cout << color::blue << " 👋 Olá " << color::off;
 	cout << pessoa.get_nome() << endl;
 	cout << " \n";
-	cout << "Painel de Peodutor.\n \n";
+	cout << "Painel de Produtor.\n \n";
 	cout << "Escolha uma das opções abaixo:\n";
 	cout << "1 - Criar evento\n";
 	cout <<	"2 - Listar Eventos | Comprar ingressos \n";
@@ -129,7 +131,8 @@ void MenuUsuario(){
 		cout << " \n";
 		cout << "Escolha uma das opções abaixo:\n";
   	cout <<	"1 - Listar Eventos | Comprar ingressos \n";
-  	cout << "2 - Pedir Reembolso \n";
+		cout << "2 - Adicionar Dinheiro a Carteira \n";
+		
     cin >> e;
 		cout << color::blue << "----------------------------------------------------- \n" << color::off;
       switch (e){

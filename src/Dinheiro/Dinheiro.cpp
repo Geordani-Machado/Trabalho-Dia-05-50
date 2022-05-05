@@ -56,3 +56,16 @@ bool Dinheiro::pagar(string pagar, string receber){
       }
 	return 1;
 }
+
+//depositar
+void Dinheiro::add_saldo(float s){
+	saldo = saldo + s;
+}
+// remover saldo da conta
+void Dinheiro::remove_saldo (float s){
+  saldo = saldo - s;
+}
+//ver saldo
+float Dinheiro::get_saldo(){
+	return saldo;
+}

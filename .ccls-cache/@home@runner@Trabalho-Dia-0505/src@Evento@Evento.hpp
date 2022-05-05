@@ -28,8 +28,7 @@ using namespace std;
       int get_ano();
       int get_qtdEventos();
 			
-	    
-      private:
+	    private:
   			string nomeEvento;
   			string nomeProdutor;
         vector<int> dia;

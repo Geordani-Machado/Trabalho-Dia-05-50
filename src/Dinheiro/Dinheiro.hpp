@@ -11,7 +11,9 @@ using namespace std;
 			void set_cartaoNome(string n);
 			void set_cartaoValidade(string validade);
 			void set_pix(string p);
-			
+			void add_saldo(float s);
+			void remove_saldo(float s);
+      
 			bool pagar(string pagar, string receber);
       int get_cartaoNumero();
 			int get_cartaCodigoDeValidacao();
@@ -21,6 +23,7 @@ using namespace std;
       double get_real();
       double get_dolar();
       double get_euro ();
+			float get_saldo();
 			
     private:
       double real=0;
@@ -31,4 +34,6 @@ using namespace std;
       string nome_cartao;
       string validade_cartao;
       string pix;
+			float saldo;
+			
   };
