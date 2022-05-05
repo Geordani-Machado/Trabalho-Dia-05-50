@@ -45,6 +45,7 @@ void CriarEvento(){
 	cin.ignore();
 	getline(cin ,NomeEvento);
 	evento.set_nomeEvento(NomeEvento);
+	evento.set_produtor(pessoa.get_nome());
 	cout << "------------------------------------\n";
 	data.CriarData(); 
 	cout << "\n";
@@ -52,16 +53,32 @@ void CriarEvento(){
 	cout << "\n";
 	local.CriarLocal();
 	evento.set_qtdEventos();
+
+	if(pessoa.get_isprodutor()==0){
+		controlemenu=3;
+	}else if(pessoa.get_isprodutor()==1){
+		controlemenu=2;
+	}
 }
 
 void ListarEvento () {
   cout << color::cyan << "------------- Listar Eventos ------------ \n" << color::off;
 	if(evento.get_qtdEventos() == 0){
 		cout << color::yellow << "------------- Alerta ❗ ------------ \n";
-		cout << "Nenhum Evento foi encontrado! 🥲 \n";
+		cout << "Nenhum Evento foi encontrado! 😥 \n";
 		cout << "------------------------------------ \n \n" << color::off;
 	}else{
-		evento.get_nomeEvento();
+		for (int i=0 ; i< evento.get_qtdEventos();i++){
+			cout << color::cyan << "------------- Evento 🥳 ------------ \n" << color::off;
+			cout << i+1;
+			cout << " - Nome do Evento: ";
+			cout << evento.get_nomeEvento() << endl;
+			cout << " - Artista: ";
+			cout << evento.get_produtor() << endl;
+			cout << " - Data: ";
+		  cout << data.get_dataFormatada() << endl;
+			cout << color::cyan << "------------- Bom  Evento 🥳 ------------ \n" << color::off;
+		}
 	}
 }
 
@@ -182,7 +199,7 @@ void Logar(){
 	sleep(1);
 	cout << "digite o seu e-mail \n";
 	cin >> email;
-	cout << "digite o sua senha \n";
+	cout << "digite a sua senha \n";
 	cin >> senha;
 
 	if(email == pessoa.get_email() && senha == pessoa.get_senha()){

@@ -29,15 +29,15 @@ using namespace std;
       int get_qtdEventos();
 			
 	    private:
-  			string nomeEvento;
-  			string nomeProdutor;
-        vector<int> dia;
-        vector<int>  mes;
-        vector<int>  ano;
-				string local;
-				int hora;
-				int minuto;
-				int qtdIngresso;
-				int vlIngresso;
-				int qtdEventos;
+  			vector <string> nomeEvento;
+  			vector <string> nomeProdutor;
+        vector <int> dia;
+        vector <int> mes;
+        vector <int> ano;
+				vector <string> local;
+				vector <int> hora;
+				vector <int> minuto;
+				vector <int> qtdIngresso;
+				vector <int> vlIngresso;
+				vector <int> qtdEventos;
   };
